@@ -1,15 +1,26 @@
-import { AntDesign } from '@expo/vector-icons';
+import { RectButton } from "react-native-gesture-handler";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
+
+
+interface IconProps {
+  type: "presence" | "absence";
+}
+
+interface ButtonProps {
+  isActive: boolean;
+  title: "presence" | "absence";
+}
 
 export const Container = styled.View`
-  padding:10px;
+  
+  padding: 10px;
   justify-content: space-between;
   flex-direction: row;
   border-radius: 5px;
   margin-bottom: ${RFValue(10)}px;
   background-color: ${({ theme }) => theme.colors.shape};
-  
 `;
 
 export const UserInf = styled.View`
@@ -20,7 +31,6 @@ export const UserInf = styled.View`
 export const StatusCheck = styled.View`
   align-items: center;
   flex-direction: column;
-
 `;
 export const Photo = styled.Image`
   width: ${RFValue(55)}px;
@@ -29,9 +39,9 @@ export const Photo = styled.Image`
 `;
 
 export const User = styled.View`
-  font-family: ${({ theme })=> theme.fonts.bold};
+  font-family: ${({ theme }) => theme.fonts.bold};
   font-size: ${RFValue(16)}px;
-  color: ${({ theme })=> theme.colors.title};
+  color: ${({ theme }) => theme.colors.title};
 `;
 
 export const Student = styled.View`
@@ -39,15 +49,15 @@ export const Student = styled.View`
 `;
 
 export const UserName = styled.Text`
-  font-family: ${({ theme })=> theme.fonts.medium};
+  font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${RFValue(16)}px;
-  color: ${({ theme })=> theme.colors.title};
+  color: ${({ theme }) => theme.colors.title};
 `;
 
 export const RAUser = styled.Text`
-  font-family: ${({ theme })=> theme.fonts.medium};
+  font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${RFValue(16)}px;
-  color: ${({ theme })=> theme.colors.title};
+  color: ${({ theme }) => theme.colors.title};
 `;
 
 export const Status = styled.View`
@@ -56,9 +66,18 @@ export const Status = styled.View`
   align-items: center;
 `;
 
-export const IconPresense = styled(AntDesign)`
- margin-bottom: 5px;
+export const ButtonStatus = styled.TouchableOpacity`
+
 `;
 
-export const IconAbsent = styled(AntDesign)`
+export const IconPresense = styled(MaterialCommunityIcons)<ButtonProps>`
+  font-size: 45px;
+  ${({ title }) => 
+   title === 'presence' && css`
+    color: ${({theme})=> theme.colors.sucess} 
+   `}
+   ${({ title }) =>
+   title === 'absence' && css`
+   color: ${({theme})=> theme.colors.attention}
+   `}
 `;

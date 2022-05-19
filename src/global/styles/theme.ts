@@ -10,6 +10,8 @@ export default{
 
     attention: '#E83F5B',
     attention_light: 'rgba(232, 63, 91, 0.5)',
+    
+    gradient: ['#FFF', '#5e89ff'],
 
     shape: '#FFF',
 

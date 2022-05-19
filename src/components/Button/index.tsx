@@ -4,15 +4,14 @@ import { Container, Title } from "./style"
 
 interface Props extends RectButtonProps {
   title: string;
-  // onPress: () => void;
+  onPress: () => void;
 }
 
 export function Button({title, ...rest}: Props){
   return(
-    <GestureHandlerRootView>
+
       <Container {...rest}>
         <Title>{title}</Title>
       </Container>
-    </GestureHandlerRootView> 
   )
 }

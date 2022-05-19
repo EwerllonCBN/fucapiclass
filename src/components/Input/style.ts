@@ -14,5 +14,5 @@ export const Container = styled(TextInput)`
   background-color: ${({ theme })=> theme.colors.background};
   border-radius: 5px;
 
-  margin-bottom: 20px;
+  margin-top: 15px;
 `;
