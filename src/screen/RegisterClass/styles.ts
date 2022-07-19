@@ -154,7 +154,7 @@ export const StatusButton = styled(RectButton)`
   flex-direction: row;
   align-items: center;
   padding: 10px 20px;
-  background-color: ${({ theme }) => theme.colors.sucess};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 5px;
   border-width: 1px;
   border-color: ${({ theme }) => theme.colors.sucess_light};
@@ -164,8 +164,16 @@ export const StatusButton = styled(RectButton)`
 `;
 
 export const StatusButtonFile = styled.TouchableOpacity`
+  width: ${RFValue(50)}px;
+  height: ${RFValue(50)}px;
   margin-left: 10px;
-
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: ${({ theme })=> theme.colors.primary};
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: ${({ theme }) => theme.colors.title};
 `;
 
 export const StatusButtonBack = styled.TouchableOpacity`
@@ -173,7 +181,7 @@ export const StatusButtonBack = styled.TouchableOpacity`
 `
 
 export const FileDownload = styled(FontAwesome5)`
-  color: ${({ theme }) => theme.colors.title};
+  color: ${({ theme }) => theme.colors.shape};
 
 `
 

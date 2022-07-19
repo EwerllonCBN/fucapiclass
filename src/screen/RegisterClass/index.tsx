@@ -134,10 +134,10 @@ export function RegisterClass() {
           <Title>Status</Title>
           <StatusBar>
             <StatusButton>
-              <Title style={{ color: "white" }}>Finalizar aula</Title>
+              <Title style={{ color: "white" }}>Iniciar aula</Title>
             </StatusButton>
             <StatusButtonFile>
-              <FileDownload name="file-download" size={45} color="grey" />
+              <FileDownload name="file-download" size={30} />
             </StatusButtonFile>
           </StatusBar>
         </Status>
